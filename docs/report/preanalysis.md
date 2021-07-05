@@ -37,15 +37,18 @@ Reproducibility, Vulnerability, GIS, Climate Change, Africa
 
 We will reproduce the two primary analyses of the original authors as closely as possible. 
 Specifically, we will reproduce the authors' (i) 2010 Household Resilience map (F4) and (ii) and Malawi Vulnerability Map (F5).
-The primary output of each of these maps is a ranking tradional authorities by household resilience. 
+The primary result displayed in each of these maps is a ranking tradional authorities by household resilience and vulnerability. 
 If we are able to exactly reproduce the results of the original authors, our rankings for each traditional authority should be identical.
 As such, we will test our ability to independently reproduce the results of the original authors by evaluating two hypotheses, one for each model and map.
 
 > H1: There is no correlation between Malcomb et al's ranking of traditional authorities by household resilience and our reproduction study's ranking of traditional authorities by household resilience.
 
+**(PJK: I think you actually want your Ho to be -  There is a less than a perfect positive correlation between Malcomb et al's ranking of traditional authorities by household resilience and our reproduction study's ranking of traditional authorities by household resilience. A perfect correlation indicates an exact reproduction. Later you might discuss how different strengths of correlation suggest different levels of partial reproduction. The same thinking applies to revising the second hypothesis.)**
+
 > H2: There is no correlation between Malcom et al's ranking of locations by climate vulnerability and our reproduction study's ranking of locations by climate vulnerability.
 
-A failure to reject these hypotheses would indicate that our results 
+We will evaluate each of these hypotheses using a **Correlation TEST TYPE**.
+A failure to reject these hypotheses would indicate that our results do not exactly match those of the original authors. 
 
 ### Original study design
 
@@ -67,13 +70,15 @@ The study did not use any **randomization**.
 The original study was conducted using STATA&trade; (4.4) and ArcGIS&trade; (4.6, F3 and F4) with unspecified software versions, by 2012 according to creation dates on map figures (F3, F4 and F5).
 
 ## Sampling plan
+The original authors used secondary data for the majority of their analyses. 
+**(PJK: What details if any were given about the sampling plan for the interviews? What was the sampling frame? Was it simple random, stratified, ...)**
 
 ### Existing data and data exploration
 
 This registration is based upon knowledge of the original study based upon a thorough reading of the original research article only.
 
 In full transparency, we have already attempted the reproduction study, including acquisition and analysis of all of the secondary data sources required.
-This preregistration serves two purposes for us:
+As such, this preregistration serves two purposes:
 1. Revisiting the original paper to document the most complete knowledge of the data and methodology possible without acquiring data or beginning analysis, represented in this preregistration.
 1. Practicing and demonstrating the full workflow of a reproduction study in the human-environment and geographical sciences, including preregistration, reproducible computational research practices, and publication of a reproduction report.
 
@@ -83,13 +88,14 @@ Holler has previously reviewed and compared other climate vulnerability models f
 
 ### Data collection and spatial sampling
 
-The study exclusively uses secondary data sources.
-The published results based on DHS surveys include data 203 traditional authorities in 2010 (F4), whereas the authors state that there are more than 250 populated traditional authorities in Malawi (4.4).
+The study exclusively uses secondary data sources. **(PJK: Is that true? Did they not collect that interview data?)**
+The published results are based on DHS surveys that include data on 203 traditional authorities in 2010 (F4). 
+However the original authors state that there are more than 250 populated traditional authorities in Malawi (4.4). **(PJK: Need to clarify where this knowledge you are injecting came from.)**
 The 2010 household resilience data is based upon 24,850 DHS household surveys (5.2).
 Furthermore, "not every traditional authority had surveys conducted within its administrative boundaries" (5.2).
 This suggests possible spatial sampling problems in the DHS survey data in the context of its application in this study.
 The authors' rationales for using the third level administrative units of traditional authorities include matching the political level at which many projects are planned and assessed, and identifying hotspots of vulnerability that are lost in the aggregation to second level districts (4.4).
-The original paper does not contain any further detail on the spatial sampling or distribution of DHS surveys *vis a vis* traditional authorities.
+The original paper does not contain any further detail on the spatial sampling or distribution of DHS surveys *vis a vis* traditional authorities. **(PJK: This answers my question above. I guess we should decided where it makes more sense to put this info. The template is a guide. We can easily adjust it.)**
 
 ## Data description
 
@@ -119,7 +125,7 @@ There are no experimentally manipulated variables.
 Eighteen independent variables are represented as indicators and drivers of four component themes of vulnerability/resilience: 1) *assets* and 2) *access* combine to create *adaptive capacity*, 3) *livelihood sensitivity*, and 4) *physical exposure*.
 Although the eighteen indicators are often discussed as driving vulnerability or resilience outcomes, they are not formally used as **predictor** or **response** variables in any statistical tests.
 
-The variables are presented below as described in various sections of the original paper, with the weighted values assigned to them for analysis of household resilience and climate vulnerability. Text is copied almost verbatim from the original study to facilitate finding the correct variables in data.
+The variables are presented below as described in various sections of the original paper, with the weighted values assigned to them for analysis of household resilience and climate vulnerability. Text is copied nearly verbatim from the original study to facilitate finding the correct variables in data.
 
 ##### Assets
 
@@ -255,8 +261,8 @@ Confounding matters further, the authors' definition for resilience is typical f
 
 All variables are normalized between zero and five (4.3 and 5.6) with zero representing the worst or poorest condition and five representing the best or richest condition (4.3).
 The normalization method is not described, but the poorest and richest conditions are described as "quintiles" with values of zero and five (4.3).
-Here, "quintiles" suggests classification into five classes with equal counts.
-"Normalization" suggests transforming each variable into a normal distribution.
+Here, "quintiles" suggests classification into five classes with equal counts. **(PJK: I am not sure a quintile means an equal count. Traditionally quintiltes have equal range (e.g., 1-20%, 21-40%), but the count of observation falling in that range need not be equal)**
+"Normalization" suggests transforming each variable into a normal distribution. **(PJK: If they are applying a z-score that will not necessarily result in a normal distribution. Also, you said above normalized between 0 and 5. There are a bunch of ways to do that, so I would be more specific if a global operation is used).**
 A minimum of zero and maximum of five suggests rescaling the data to a range from zero to five or classifying the data into six quantiles assigned integer values zero through five.
 Four variables were described as (Y/N) nominal data (T1), for which it is not clear how to transform the data into ordinal data with more than two classes.
 A similar concern arises for the market access variable with three classes (Rural, Peri-urban, and Urban).
@@ -271,12 +277,13 @@ Meanwhile, livelihood sensitivity is *added*, therefore each of its indicators s
 The final model of the study is also referred to equally often in opposite terms: "vulnerability" or "resilience"
 Rufat et al (2015) found that the monotonicity of vulnerability indicators should not be assumed.
 Therefore, the one certainty is that the individual and thematic variable directions are uncertain.
+**(I might move some of these more substantive critiques into the discussion of the reproduction report that this doc becomes. Here you are moving into critique, credibility assessment, and almost to suggested improvement. We are in a strange spot having done this reproduction already. Perhaps we need some discussion of what exactly we want this PAP to convey.)**
 
 Household-level resilience is analyzed with the weighted combination of all asset theme indicators and access theme indicators.
 Weights are given in the Variables section.
 The formula for this combination is not specified.
 For 2004, the authors report a household-level minimum resilience score of -0.80 and maximum of 39.33 (5.2).
-Based on the described methodology of a weighted combination of values ranging from zero to five, a negative score is inexplicable.
+Based on the described methodology of a weighted combination of values ranging from zero to five, a negative score is uninterpretable and likely indicates an error.
 A maximum score near 40 is intuitive as a theoretical maximum of 40% for the adaptive capacity category.
 It is not clear whether the calculation should be a weighted average, weighted sum, weighted combination meant to achieve a possible range of 40% for the overall adaptive capacity component of the final vulnerability model, or some other form of weighted combination.
 
@@ -289,6 +296,7 @@ Physical exposure may be calculated with the weighted combination of its two ind
 Weights are given in the Variables section.
 The formula for this combination is not specified.
 It is not specified whether any geographic transformation is required to combine these two variables.
+**(PJK: I might add again here what the scales and extents of these two rasters were, thereby reinforcing the fact that some tranformation, relalignment, and resampling was applied)**
 Results for this theme are not presented.
 
 #### Geographic transformations
@@ -305,7 +313,7 @@ It may be possible to infer the resolution and methods from close inspection of 
 
 ## Analyses
 
-The final climate vulnerability analysis is calculated with map algebra on a raster grid for each theme using the formula `household resilience = adaptive capacity + livelihood sensitivity - physical exposure` (4.6).
+The final climate vulnerability analysis is calculated with map algebra on a raster grid for each theme using the formula `household resilience = adaptive capacity + livelihood sensitivity - physical exposure` (4.6). **( PJK: I would make this an equation on an independent line)**
 The results are presented as a continuous raster grid with a continuous color gradient.
 No descriptive statistics of the results are provided.
 
@@ -334,7 +342,7 @@ The study also references Dartmouth Flood Observatory Data from 1999 to 2007 (F5
 Therefore, it appears that the 2004&ndash;2010 temporal extent applies strictly to the household resilience analysis, and not to the climate vulnerability analysis.
 
 The **temporal support** for the household resilience analysis was longitudinal DHS Survey data collected in 2004 and 2010.
-The **temporal support** for the climate vulnerability analysis is an aggregation of data from different sources, ranging from 1999 to 2010 (F5).
+The **temporal support** for the climate vulnerability analysis is an aggregation of data from different sources, ranging from 1999 to 2010 (F5). **(PJK: A support is the unit of analysis. So in time it would be data that has an ANNUAL interval, or a MONTHLY interval. Same as a raster has a grid size (e.g., 30m))**
 **Temporal effects** are not measured or accounted for, although the authors discuss differences between household resilience in 2004 and 2010 (5.3 and 5.4)
 
 ### Data exclusion
@@ -377,6 +385,7 @@ The reproduction study will use the indicators and weights as they are described
 The replication study will use a different software environment, using replicable open source software over proprietary software.
 Specifically, the study will be completed using The R Project for Statistical Computing version 3.6.1 or later using RStudio version 1.3.1 or later, and the research will be completed in full on both Windows 10 and MacOS operating systems.
 A complete list of required R packages is not known at the time of preregistration, but will be reported with the final publication.
+**(PJK: Add a sentence as to whether this change in environment is anticipated to effect the results and why/why not)**
 
 The study will attempt to reproduce the original methods exactly, but some differences may be inevitable due to ambiguous or conflicting information in the original article.
 We will plan to make the following reasonable decisions, which may differ from the authors' intentions:
@@ -396,6 +405,8 @@ We will plan to make the following reasonable decisions, which may differ from t
 1. Any traditional authority missing adaptive capacity data from DHS surveys will be removed / masked from the final vulnerability analysis.
 
 ### Evaluating the reproduction results
+
+**(PJK: I might move some of the adjustments I made above down here. I attempted above to formalize the hypothesis presentatio, which would fit right in here.)**
 
 In order to test the adaptive capacity results, we will georeference the original figure 4 map using the QGIS3 georeferencer plugin.
 Using a vector dataset of traditional authorities and the georeferenced map, we will then use zonal statistics to extract the average brightness values, (which represent four classes of adaptive capacity) for each traditional authority.
