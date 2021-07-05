@@ -11,17 +11,18 @@ Version 1.0 | Created June 25, 2021 | Last Updated June 25, 2021
 Malcomb, Weaver and Krakowka ([2014](https://doi.org/10.1016/j.apgeog.2014.01.004)) published one of the first sub-national geographic climate change vulnerability models for a developing country (1.4).
 The authors intended for the study to be replicable across space (other African countries with similar data available) (7.1), time (when new survey data is published) (4.5 and 7.1), and vulnerability stimuli (7.1) for the purpose of addressing extreme vulnerability to climate change (1.3) with a model to assist in the allocation and evaluation of foreign aid (1.2).
 The methodology was designed to be "transparent and easily replicable" (2.1) in its use of "locally derived indicators and granular data" (2.1), addressing critiques of vulnerability models aimed at their uncertainty and sensitivity due to problems of scale and spatial aggregation, normative and subjective modelling decisions, and data availability, and challenges in model comparability (2.1).
-The model uses household adaptive capacity data United States Agency for International Development () Demographic and Health Surveys (DHS) (1.4 and 4.1) available in 44 African countries (7.1), livelihood sensitivity data from the USAID / Famine Early Warning Systems Network (FEWSnet) livelihood zones baseline surveys available in 23 African countries (3.6), and global physical exposure data from the United Nations Environment Programme (UNEP) Global Risk Data Platform.
+The model uses household adaptive capacity data from the United States Agency for International Development () Demographic and Health Surveys (DHS) (1.4 and 4.1) available in 44 African countries (7.1), livelihood sensitivity data from the USAID / Famine Early Warning Systems Network (FEWSnet) livelihood zones baseline surveys available in 23 African countries (3.6), and global physical exposure data from the United Nations Environment Programme (UNEP) Global Risk Data Platform.
 
 This replication study is motivated by three factors.
 First, climate change impacts are increasingly severe in Africa and establishing reproducible and replicable methods for geographic vulnerability modeling may help in allocating resources for climate change adaptation and evaluating the effectiveness of climate change adaptation investments.
 Second, a fully reproducible publication can be more readily replicated in new geographic, temporal, and thematic contexts, and tested for uncertainty due to data constraints and subjective modelling decisions.
 Third, there is an urgent need to evaluate the reproducibility of research in human-environment and geographical sciences (HEGS) and to establish protocols and infrastructure for conducting and publishing reproduction/replication studies and reproducible research in HEGS.
 
-In this study, we will attempt to identically reproduce the 2010 Malawi Household Resilience model and the Vulnerability to Climate Change model described in Malcomb et al (2014) using The R Project for Statistical Computing and the same data sources cited in the original publication.
-We will compare our reproduction results with the original results using thematic maps of difference between results and the Spearman's Rho Correlation Coefficient.
-Additionally, we will compare reproduction results with original results for the household resilience model with a confusion matrix, and for the vulnerability model with a scatterplot.
+In this study, we will attempt to identically reproduce the 2010 Malawi Household Resilience model and the Vulnerability to Climate Change model as implemented by Malcomb et al (2014) using The R Project for Statistical Computing and the same data sources cited in the original publication.
 The original study is a descriptive geographic multi-criteria analysis based on local expert opinion, and therefore has no testable hypotheses or effects.
+We will compare our reproduction results with the results of the original authors by creating thematic maps of difference **(PJK: ARE THE MAPS DIFFERENCE MAPS OR REPRODUCTIONS THAT YOU WILL THEN LOOK FOR DIFFERENCES IN?)** between results and the Spearman's Rho Correlation Coefficient **(PJK: TESTING WHAT SPECIFICALLY?)**.
+Additionally, we will use a confusion matrix to compare our reproduction results with the original results for the household resilience model. 
+We will compare our reproduction of the orignal authors' vulnerability model with a scatterplot.
 
 The replication study data and code will be made available in a GitHub repository to the greatest extent that licensing and file sizes permit.
 The repository will be made public at [github.com/GIS4DEV/RPr-Malcomb-2014](https://github.com/HEGSRR/RPr-Malcomb-2014)
@@ -34,14 +35,17 @@ Reproducibility, Vulnerability, GIS, Climate Change, Africa
 
 ## Study design
 
-The reproduction study design will first implement the original study as closely as possible to reproduce the 2010 Household Resilience map (F4) and Malawi Vulnerability Map (F5).
-Our two confirmatory hypotheses are that we will be able to independently reproduce results for both maps.
-
-The working hypotheses are therefore:
+We will reproduce the two primary analyses of the original authors as closely as possible. 
+Specifically, we will reproduce the authors' (i) 2010 Household Resilience map (F4) and (ii) and Malawi Vulnerability Map (F5).
+The primary output of each of these maps is a ranking tradional authorities by household resilience. 
+If we are able to exactly reproduce the results of the original authors, our rankings for each traditional authority should be identical.
+As such, we will test our ability to independently reproduce the results of the original authors by evaluating two hypotheses, one for each model and map.
 
 > H1: There is no correlation between Malcomb et al's ranking of traditional authorities by household resilience and our reproduction study's ranking of traditional authorities by household resilience.
 
 > H2: There is no correlation between Malcom et al's ranking of locations by climate vulnerability and our reproduction study's ranking of locations by climate vulnerability.
+
+A failure to reject these hypotheses would indicate that our results 
 
 ### Original study design
 
